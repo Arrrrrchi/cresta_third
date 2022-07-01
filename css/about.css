@@ -1,0 +1,679 @@
+@charset "UTF-8";
+/* ------------------------------------------- */
+/* Base */
+/* ------------------------------------------- */
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6em;
+}
+
+h2 {
+  font-size: 7.2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 3.2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 2rem;
+  font-family: 'YuGothic','游ゴシック','Montserrat', sans-serif;
+}
+
+p {
+  font-family: 'YuGothic','游ゴシック', sans-serif;
+  line-height: 30px;
+}
+
+.about {
+  max-width: 400px;
+  display: inline-block;
+}
+
+.about__title {
+  margin-bottom: 30px;
+}
+
+.about__sub-title {
+  margin-bottom: 30px;
+}
+
+.about__text {
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #000;
+  width: 140px;
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+/* ------------------------------------------- */
+/* header */
+/* ------------------------------------------- */
+.header {
+  position: relative;
+  z-index: 10;
+  padding: 30px 58px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header__menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header__menu:hover {
+  cursor: pointer;
+}
+
+.header__menu__hamburger {
+  margin-right: 5px;
+}
+
+.bar {
+  display: block;
+  background-color: #fff;
+  height: 2px;
+  width: 22px;
+  margin-bottom: 5px;
+}
+
+.bar:last-child {
+  margin-bottom: 0;
+}
+
+.header__menu__hamburger.open > .bar__top {
+  -webkit-transform: translate(0, 4px) rotate(30deg);
+          transform: translate(0, 4px) rotate(30deg);
+}
+
+.header__menu__hamburger.open > .bar__mid {
+  display: none;
+}
+
+.header__menu__hamburger.open > .bar__bot {
+  -webkit-transform: translate(0, -2.5px) rotate(-30deg);
+          transform: translate(0, -2.5px) rotate(-30deg);
+}
+
+.header__menu p {
+  display: inline-block;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.fixed {
+  position: fixed;
+  background-color: #282F35;
+  width: 90%;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+/* ------------------------------------------- */
+/* header-nav */
+/* ------------------------------------------- */
+.header-nav {
+  background-color: rgba(34, 34, 34, 0.95);
+  height: 100vh;
+  width: 520px;
+  padding-top: 20vh;
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: translateX(520px);
+          transform: translateX(520px);
+}
+
+.header-nav__logo {
+  width: 42.15px;
+  height: 45px;
+  margin-bottom: 40px;
+}
+
+.nav-item {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.nav-item:last-child {
+  margin-bottom: 0;
+}
+
+.nav-item a {
+  color: #fff;
+  font-size: 2.0rem;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+}
+
+/* 右に消えるアニメーション */
+.slideOut {
+  -webkit-animation: slideOut 0.5s forwards;
+          animation: slideOut 0.5s forwards;
+}
+
+@-webkit-keyframes slideOut {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(520px);
+            transform: translateX(520px);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(520px);
+            transform: translateX(520px);
+  }
+}
+
+/* 左に現れるアニメーション */
+.slideIn {
+  -webkit-animation: slideIn 0.5s forwards;
+          animation: slideIn 0.5s forwards;
+}
+
+@-webkit-keyframes slideIn {
+  from {
+    -webkit-transform: translateX(520px);
+            transform: translateX(520px);
+  }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    -webkit-transform: translateX(520px);
+            transform: translateX(520px);
+  }
+  to {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+/* 背景を暗くする */
+.bg-cover {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  width: 100vw;
+  z-index: 3;
+  position: absolute;
+  display: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* ------------------------------------------- */
+/* fv */
+/* ------------------------------------------- */
+.fv {
+  height: calc(100vw - 70vw);
+}
+
+.fv__img__wrapper {
+  width: 69vw;
+  position: absolute;
+  top: 0;
+}
+
+.fv__img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.fv__bg-box {
+  width: 54vw;
+  height: calc(100vw - 70vw);
+  background-color: #000;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.fv__copy {
+  position: absolute;
+  z-index: 2;
+  top: calc(100vw - 90vw);
+  right: 20vw;
+  color: #fff;
+}
+
+/* ------------------------------------------- */
+/* main */
+/* ------------------------------------------- */
+main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 15.7vw 5.1vw 2.1vw auto 1fr;
+      grid-template-columns: 1fr 15.7vw 5.1vw 2.1vw auto 1fr;
+  -ms-grid-rows: auto 190px auto auto;
+      grid-template-rows: auto 190px auto auto;
+}
+
+/* ------------------------------------------- */
+/* vision */
+/* ------------------------------------------- */
+.vision {
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+  grid-column-end: 6;
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  grid-row-end: 2;
+  margin-bottom: 120px;
+}
+
+/* ------------------------------------------- */
+/* CEO message */
+/* ------------------------------------------- */
+.ceo-img {
+  width: 420px;
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+.message {
+  -ms-grid-column: 5;
+      grid-column-start: 5;
+  grid-column-end: 6;
+  -ms-grid-row: 3;
+      grid-row-start: 3;
+  grid-row-end: 4;
+  background-color: #f0f0f0;
+  max-width: 765px;
+  margin-bottom: 120px;
+  z-index: -1;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+}
+
+.message__inner {
+  padding: 120px 185px 90px;
+}
+
+/* ------------------------------------------- */
+/* company */
+/* ------------------------------------------- */
+.company {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  grid-column-end: 6;
+  -ms-grid-row: 4;
+      grid-row-start: 4;
+  grid-row-end: 5;
+}
+
+.company__border {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #ddd;
+}
+
+.company__inner {
+  max-width: 700px;
+  margin: 0 0 40px auto;
+}
+
+.company__inner dl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.company__inner dl dt {
+  font-weight: bold;
+  border-bottom: 1px solid #ddd;
+  width: 100px;
+  line-height: 56px;
+  font-family: 'YuGothic','游ゴシック', sans-serif;
+}
+
+.company__inner dl dd {
+  border-bottom: 1px solid #ddd;
+  width: 100%;
+  padding: 0 20px;
+  line-height: 56px;
+  font-family: 'YuGothic','游ゴシック', sans-serif;
+}
+
+.company__map {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  grid-column-end: 3;
+  margin-bottom: 120px;
+}
+
+.company__map img {
+  max-width: 100%;
+}
+
+/* ------------------------------------------- */
+/* footer */
+/* ------------------------------------------- */
+.footer {
+  background-color: #525252;
+  text-align: center;
+}
+
+.copy {
+  color: #fff;
+  font-size: 1rem;
+  line-height: 50px;
+}
+
+@media (max-width: 900px) {
+  /* ------------------------------------------- */
+  /* fv */
+  /* ------------------------------------------- */
+  .fv {
+    height: 615px;
+  }
+  .fv__img__wrapper {
+    max-width: 587px;
+    height: 529px;
+  }
+  .fv__img {
+    height: 100%;
+  }
+  .fv__bg-box {
+    width: 54vw;
+    height: 615px;
+  }
+  .fv__copy {
+    top: 220px;
+    right: 15vw;
+  }
+  /* ------------------------------------------- */
+  /* main */
+  /* ------------------------------------------- */
+  main {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 30px 120px 94px auto 30px;
+        grid-template-columns: 30px 120px 94px auto 30px;
+    -ms-grid-rows: auto 142px auto auto;
+        grid-template-rows: auto 142px auto auto;
+  }
+  /* ------------------------------------------- */
+  /* vision */
+  /* ------------------------------------------- */
+  .vision {
+    -ms-grid-column: 3;
+        grid-column-start: 3;
+    grid-column-end: 5;
+    margin-bottom: 80px;
+  }
+  /* ------------------------------------------- */
+  /* CEO message */
+  /* ------------------------------------------- */
+  .ceo-img {
+    width: 320px;
+    -ms-grid-column: 2;
+        grid-column-start: 2;
+  }
+  .message {
+    -ms-grid-column: 4;
+        grid-column-start: 4;
+    grid-column-end: 5;
+    max-width: 494px;
+    margin-bottom: 82px;
+    z-index: -1;
+  }
+  .message__inner {
+    padding: 110px 40px 78px;
+  }
+  /* ------------------------------------------- */
+  /* company */
+  /* ------------------------------------------- */
+  .company {
+    -ms-grid-column: 2;
+        grid-column-start: 2;
+    grid-column-end: 5;
+  }
+  .company__inner {
+    max-width: 678px;
+    padding-left: 30px;
+    margin: 0 0 40px auto;
+  }
+  .company__inner dl {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .company__inner dl dt {
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+    width: 140px;
+    line-height: 56px;
+    font-family: 'YuGothic','游ゴシック', sans-serif;
+  }
+  .company__inner dl dd {
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+    padding: 0 20px;
+    line-height: 56px;
+    font-family: 'YuGothic','游ゴシック', sans-serif;
+  }
+  .company__map {
+    -ms-grid-column: 2;
+        grid-column-start: 2;
+    grid-column-end: 3;
+    margin-bottom: 80px;
+  }
+  .company__map img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  /* ------------------------------------------- */
+  /* Base */
+  /* ------------------------------------------- */
+  h2 {
+    font-size: 5.6rem;
+  }
+  h3 {
+    font-size: 3.2rem;
+  }
+  h4 {
+    font-size: 2.4rem;
+  }
+  p {
+    font-size: 1.4rem;
+  }
+  /* ------------------------------------------- */
+  /* header */
+  /* ------------------------------------------- */
+  .header {
+    padding: 15px 20px;
+  }
+  .header__logo {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .header__logo img {
+    width: 189px;
+  }
+  .bar {
+    height: 1px;
+    margin-bottom: 3px;
+  }
+  .bar:last-child {
+    margin-bottom: 0;
+  }
+  .header__menu p {
+    font-size: 1rem;
+  }
+  .header__menu__hamburger.open > .bar__top {
+    -webkit-transform: translate(0, 3px) rotate(30deg);
+            transform: translate(0, 3px) rotate(30deg);
+  }
+  .header__menu__hamburger.open > .bar__mid {
+    display: none;
+  }
+  .header__menu__hamburger.open > .bar__bot {
+    -webkit-transform: translate(0, -1.5px) rotate(-30deg);
+            transform: translate(0, -1.5px) rotate(-30deg);
+  }
+  /* ------------------------------------------- */
+  /* header-nav */
+  /* ------------------------------------------- */
+  .header-nav {
+    height: 100vh;
+    width: 100vw;
+    -webkit-transform: translateX(100vw);
+            transform: translateX(100vw);
+  }
+  /* ------------------------------------------- */
+  /* fv */
+  /* ------------------------------------------- */
+  .fv {
+    height: 387px;
+    margin-bottom: 70px;
+  }
+  .fv__img__wrapper {
+    max-width: 287px;
+    height: 387px;
+  }
+  .fv__img {
+    height: 100%;
+  }
+  .fv__bg-box {
+    width: 54vw;
+    height: 449px;
+  }
+  .fv__copy {
+    top: 150px;
+    right: 30px;
+  }
+  .fv__copy h4 {
+    font-size: 1.6rem;
+  }
+  /* ------------------------------------------- */
+  /* main */
+  /* ------------------------------------------- */
+  main {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 15px auto 15px;
+        grid-template-columns: 15px auto 15px;
+    -ms-grid-rows: auto 142px auto auto;
+        grid-template-rows: auto 142px auto auto;
+  }
+  /* ------------------------------------------- */
+  /* vision */
+  /* ------------------------------------------- */
+  .vision {
+    -ms-grid-column: 2;
+        grid-column-start: 2;
+    grid-column-end: 3;
+    margin-bottom: 80px;
+  }
+  /* ------------------------------------------- */
+  /* CEO message */
+  /* ------------------------------------------- */
+  .ceo-img {
+    width: 340px;
+    -ms-grid-column: 1;
+        grid-column-start: 1;
+  }
+  .message {
+    -ms-grid-column: 2;
+        grid-column-start: 2;
+    grid-column-end: 3;
+    max-width: 494px;
+    margin-bottom: 82px;
+    z-index: -1;
+  }
+  .message__inner {
+    padding: 110px 40px 78px;
+  }
+  /* ------------------------------------------- */
+  /* company */
+  /* ------------------------------------------- */
+  .company {
+    -ms-grid-column: 2;
+        grid-column-start: 2;
+    grid-column-end: 3;
+  }
+  .company__inner {
+    max-width: 678px;
+    padding-left: 0;
+    margin: 0 auto 40px auto;
+  }
+  .company__inner dl {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .company__inner dl dt {
+    font-weight: normal;
+    font-size: 1.4rem;
+  }
+  .company__inner dl dd {
+    font-size: 1.4rem;
+  }
+  .company__map {
+    -ms-grid-column: 2;
+        grid-column-start: 2;
+    grid-column-end: 3;
+    margin-bottom: 80px;
+  }
+  .company__map img {
+    max-width: 100%;
+  }
+}
+/*# sourceMappingURL=about.css.map */
